@@ -184,6 +184,9 @@ If you want to stay on nvim 0.7, pin monopuccin tag to v0.2.4 and nvim-treesitte
 		-- Lua
 		["@constructor.lua"] = { link = "@punctuation.bracket" }, -- For constructor calls and definitions: = { } in Lua.
 
+		-- Go
+		["@type.definition.go"] = { fg = C.green }, -- type names in type declarations
+
 		-- Python
 		["@constructor.python"] = { fg = C.green }, -- __init__(), __new__().
 
