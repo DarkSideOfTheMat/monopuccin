@@ -3,8 +3,8 @@ try
 	Plug expand('<sfile>')[0:-16] 
 	call plug#end()
 
-	lua require("catppuccin").setup {}
-  colorscheme catppuccin-nvim
+	lua require("monopuccin").setup {}
+  colorscheme monopuccin-nvim
 catch
 	echo v:exception
 	1cq

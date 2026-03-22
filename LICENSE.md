@@ -1,6 +1,10 @@
 MIT License
 
+Based on catppuccin/nvim (https://github.com/catppuccin/nvim)
 Copyright (c) 2021 Catppuccin
+
+Modifications for Monopuccin
+Copyright (c) 2026 DarkSideOfTheMat
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

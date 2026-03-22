@@ -1,26 +1,26 @@
 local M = {}
 
-local catppuccin_path = vim.fn.getcwd() -- get to the root directory of the plugin
-local lua_path = catppuccin_path .. "/lua"
+local monopuccin_path = vim.fn.getcwd() -- get to the root directory of the plugin
+local lua_path = monopuccin_path .. "/lua"
 
 package.path = package.path .. string.format(";%s/?.lua", lua_path) .. string.format(";%s/?/init.lua", lua_path)
 
-local integrations_path = lua_path .. "/catppuccin/groups/integrations/"
-local target_path = lua_path .. "/catppuccin/utils/integration_mappings.lua"
+local integrations_path = lua_path .. "/monopuccin/groups/integrations/"
+local target_path = lua_path .. "/monopuccin/utils/integration_mappings.lua"
 
----@return table mappings table holding plugin to catppuccin name
+---@return table mappings table holding plugin to monopuccin name
 local function create_table()
 	local mappings = vim.iter(vim.fs.dir(integrations_path)):fold({}, function(m, filename, _)
 		filename = vim.fn.fnamemodify(filename, ":r")
 
-		local ok, mod = pcall(require, "catppuccin.groups.integrations." .. filename)
+		local ok, mod = pcall(require, "monopuccin.groups.integrations." .. filename)
 
 		if not ok then return m end
 
 		---@type string
 		local plugin_url = mod.url
 		if not plugin_url then return m end
-		local plugin_name = require("catppuccin.lib.detect_integrations").parse_url(plugin_url)
+		local plugin_name = require("monopuccin.lib.detect_integrations").parse_url(plugin_url)
 		m[plugin_name] = filename
 
 		return m
